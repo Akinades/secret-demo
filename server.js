@@ -27,7 +27,8 @@ app.use(passport.session());
 function connectDB(){
     try {
         // Connect to MongoDB
-       mongoose.connect("mongodb://127.0.0.1/userDB", { useNewUrlParser: true });
+    //    mongoose.connect("mongodb://127.0.0.1/userDB", { useNewUrlParser: true });
+      mongoose.connect(process.env.MONGO_URI);
         console.log('Connection to MongoDB succeeded');
       } catch(err) {
           console.log('Error: Connection to MongoDB failed: ' + err);
