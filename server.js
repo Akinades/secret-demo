@@ -94,7 +94,7 @@ app.get("/register",(req,res)=>{
 });
 
 //Google Authenticator
-app.get("/auth/google/", passport.authenticate("google", { scope : ["profile"] }));
+app.get("/auth/google", passport.authenticate("google", { scope : ["profile"] }));
   
 app.get("/auth/google/secrets", 
   passport.authenticate("google", { failureRedirect: "/login" }),
