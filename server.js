@@ -63,7 +63,7 @@ passport.deserializeUser((id, done)=>{
 passport.use(new GoogleStrategy({
     clientID : process.env.Client_ID , 
     clientSecret : process.env.Client_secret, 
-    callbackURL : "http://localhost:3000/auth/google/secrets",
+    callbackURL : "https://secret-demo.cyclic.app/auth/google/secrets",
    
 },
     function(accessToken, refreshToken, profile, cb) {
@@ -77,7 +77,7 @@ passport.use(new GoogleStrategy({
 passport.use(new FacebookStrategy({
     clientID: process.env.Facebook_id,
     clientSecret: process.env.Facebook_secret,
-    callbackURL: "http://localhost:3000/auth/facebook/secrets"
+    callbackURL: "https://secret-demo.cyclic.app/auth/facebook/secrets"
   },
   function(accessToken, refreshToken, profile, cb) {
     User.findOrCreate({ facebookId: profile.id }, function (err, user) {
